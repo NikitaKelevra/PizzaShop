@@ -8,24 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		68A20F202816D89B003AA709 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A20F1F2816D89B003AA709 /* AppDelegate.swift */; };
-		68A20F222816D89B003AA709 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A20F212816D89B003AA709 /* SceneDelegate.swift */; };
-		68A20F242816D89B003AA709 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A20F232816D89B003AA709 /* ViewController.swift */; };
 		68A20F272816D89B003AA709 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68A20F252816D89B003AA709 /* Main.storyboard */; };
 		68A20F2A2816D89B003AA709 /* PizzaShop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 68A20F282816D89B003AA709 /* PizzaShop.xcdatamodeld */; };
 		68A20F2C2816D89C003AA709 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A20F2B2816D89C003AA709 /* Assets.xcassets */; };
 		68A20F2F2816D89C003AA709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68A20F2D2816D89C003AA709 /* LaunchScreen.storyboard */; };
+		68C57CC42816ED9800FC10EA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C57CC32816ED9800FC10EA /* MainViewController.swift */; };
+		68C57CC82816F09300FC10EA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C57CC72816F09300FC10EA /* MainViewModel.swift */; };
+		68C57CCA2816F10F00FC10EA /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C57CC92816F10F00FC10EA /* MainCell.swift */; };
+		68C57CCD2816F18500FC10EA /* MainCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C57CCC2816F18500FC10EA /* MainCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		68A20F1C2816D89B003AA709 /* PizzaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A20F1F2816D89B003AA709 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		68A20F212816D89B003AA709 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		68A20F232816D89B003AA709 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		68A20F262816D89B003AA709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68A20F292816D89B003AA709 /* PizzaShop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PizzaShop.xcdatamodel; sourceTree = "<group>"; };
 		68A20F2B2816D89C003AA709 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68A20F2E2816D89C003AA709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68A20F302816D89C003AA709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68C57CC32816ED9800FC10EA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		68C57CC72816F09300FC10EA /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		68C57CC92816F10F00FC10EA /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainCell.swift; path = ../MainCell/MainCell.swift; sourceTree = "<group>"; };
+		68C57CCC2816F18500FC10EA /* MainCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainCellViewModel.swift; path = PizzaShop/ViewControllers/MainVC/MainCell/MainCellViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +62,42 @@
 		68A20F1E2816D89B003AA709 /* PizzaShop */ = {
 			isa = PBXGroup;
 			children = (
-				68A20F1F2816D89B003AA709 /* AppDelegate.swift */,
-				68A20F212816D89B003AA709 /* SceneDelegate.swift */,
-				68A20F232816D89B003AA709 /* ViewController.swift */,
-				68A20F252816D89B003AA709 /* Main.storyboard */,
+				68C57CC52816EF3900FC10EA /* ViewControllers */,
 				68A20F2B2816D89C003AA709 /* Assets.xcassets */,
-				68A20F2D2816D89C003AA709 /* LaunchScreen.storyboard */,
-				68A20F302816D89C003AA709 /* Info.plist */,
 				68A20F282816D89B003AA709 /* PizzaShop.xcdatamodeld */,
+				68A20F302816D89C003AA709 /* Info.plist */,
+				68A20F1F2816D89B003AA709 /* AppDelegate.swift */,
+				68A20F252816D89B003AA709 /* Main.storyboard */,
+				68A20F2D2816D89C003AA709 /* LaunchScreen.storyboard */,
 			);
 			path = PizzaShop;
+			sourceTree = "<group>";
+		};
+		68C57CC52816EF3900FC10EA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				68C57CC62816EF4A00FC10EA /* MainVC */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		68C57CC62816EF4A00FC10EA /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				68C57CC32816ED9800FC10EA /* MainViewController.swift */,
+				68C57CC72816F09300FC10EA /* MainViewModel.swift */,
+				68C57CCB2816F12000FC10EA /* New Group */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		68C57CCB2816F12000FC10EA /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				68C57CC92816F10F00FC10EA /* MainCell.swift */,
+				68C57CCC2816F18500FC10EA /* MainCellViewModel.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68A20F242816D89B003AA709 /* ViewController.swift in Sources */,
 				68A20F202816D89B003AA709 /* AppDelegate.swift in Sources */,
 				68A20F2A2816D89B003AA709 /* PizzaShop.xcdatamodeld in Sources */,
-				68A20F222816D89B003AA709 /* SceneDelegate.swift in Sources */,
+				68C57CC42816ED9800FC10EA /* MainViewController.swift in Sources */,
+				68C57CC82816F09300FC10EA /* MainViewModel.swift in Sources */,
+				68C57CCA2816F10F00FC10EA /* MainCell.swift in Sources */,
+				68C57CCD2816F18500FC10EA /* MainCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +330,6 @@
 				INFOPLIST_FILE = PizzaShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -326,7 +357,6 @@
 				INFOPLIST_FILE = PizzaShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
