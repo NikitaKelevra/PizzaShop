@@ -13,8 +13,8 @@ import UIKit
 class MainViewController: UICollectionViewController {
 
     // MARK: - Public properties
-    
-    
+    var sections: [MSection] = []
+    var products: [Product] = []
     
     // MARK: - Private properties
     
@@ -23,6 +23,11 @@ class MainViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NetworkManager.shared.fetchProducts { products in
+            self.products = products
+            print(products[0].name)
+        }
+        
 //        view.backgroundColor = .brown
         setupNavigationBar()
         setupCollectionView()
@@ -37,10 +42,14 @@ class MainViewController: UICollectionViewController {
     }
     
     // MARK: - UICollectionViewDataSource
-    override func numberOfSections(in collectionView: UICollectionView) -> Int { return 1 }
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        sections.count
+    }
 
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return 1 }
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        sections[section].items.count
+    }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)

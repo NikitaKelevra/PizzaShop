@@ -16,6 +16,12 @@
 		68C57CC82816F09300FC10EA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C57CC72816F09300FC10EA /* MainViewModel.swift */; };
 		68C57CCA2816F10F00FC10EA /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C57CC92816F10F00FC10EA /* MainCell.swift */; };
 		68C57CCD2816F18500FC10EA /* MainCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C57CCC2816F18500FC10EA /* MainCellViewModel.swift */; };
+		7D21FB1D281711AC00B7C7A0 /* MSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21FB1C281711AC00B7C7A0 /* MSection.swift */; };
+		7D21FB1F2817122000B7C7A0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21FB1E2817122000B7C7A0 /* Product.swift */; };
+		7DCF2F6628187DEF00ED4869 /* ProductProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF2F6528187DEF00ED4869 /* ProductProtocol.swift */; };
+		7DCF2F692818803E00ED4869 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF2F682818803E00ED4869 /* Pizza.swift */; };
+		7DCF2F6B2818804E00ED4869 /* Desert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF2F6A2818804E00ED4869 /* Desert.swift */; };
+		7DCF2F6D2818818200ED4869 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF2F6C2818818200ED4869 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		68C57CC72816F09300FC10EA /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		68C57CC92816F10F00FC10EA /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainCell.swift; path = ../MainCell/MainCell.swift; sourceTree = "<group>"; };
 		68C57CCC2816F18500FC10EA /* MainCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainCellViewModel.swift; path = PizzaShop/ViewControllers/MainVC/MainCell/MainCellViewModel.swift; sourceTree = SOURCE_ROOT; };
+		7D21FB1C281711AC00B7C7A0 /* MSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSection.swift; sourceTree = "<group>"; };
+		7D21FB1E2817122000B7C7A0 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		7DCF2F6528187DEF00ED4869 /* ProductProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductProtocol.swift; sourceTree = "<group>"; };
+		7DCF2F682818803E00ED4869 /* Pizza.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
+		7DCF2F6A2818804E00ED4869 /* Desert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desert.swift; sourceTree = "<group>"; };
+		7DCF2F6C2818818200ED4869 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				68C57CC52816EF3900FC10EA /* ViewControllers */,
+				7D558D0928170FDC00DD7D88 /* Models */,
+				7DCF2F6428187DBB00ED4869 /* Services */,
 				68A20F2B2816D89C003AA709 /* Assets.xcassets */,
 				68A20F282816D89B003AA709 /* PizzaShop.xcdatamodeld */,
 				68A20F302816D89C003AA709 /* Info.plist */,
@@ -86,18 +100,46 @@
 			children = (
 				68C57CC32816ED9800FC10EA /* MainViewController.swift */,
 				68C57CC72816F09300FC10EA /* MainViewModel.swift */,
-				68C57CCB2816F12000FC10EA /* New Group */,
+				68C57CCB2816F12000FC10EA /* MainCell */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
 		};
-		68C57CCB2816F12000FC10EA /* New Group */ = {
+		68C57CCB2816F12000FC10EA /* MainCell */ = {
 			isa = PBXGroup;
 			children = (
 				68C57CC92816F10F00FC10EA /* MainCell.swift */,
 				68C57CCC2816F18500FC10EA /* MainCellViewModel.swift */,
 			);
-			path = "New Group";
+			path = MainCell;
+			sourceTree = "<group>";
+		};
+		7D558D0928170FDC00DD7D88 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7D21FB1C281711AC00B7C7A0 /* MSection.swift */,
+				7D21FB1E2817122000B7C7A0 /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7DCF2F6428187DBB00ED4869 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7DCF2F6728187E9100ED4869 /* Products */,
+				7DCF2F6C2818818200ED4869 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7DCF2F6728187E9100ED4869 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7DCF2F6528187DEF00ED4869 /* ProductProtocol.swift */,
+				7DCF2F682818803E00ED4869 /* Pizza.swift */,
+				7DCF2F6A2818804E00ED4869 /* Desert.swift */,
+			);
+			path = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,11 +213,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DCF2F6D2818818200ED4869 /* NetworkManager.swift in Sources */,
 				68A20F202816D89B003AA709 /* AppDelegate.swift in Sources */,
+				7D21FB1F2817122000B7C7A0 /* Product.swift in Sources */,
+				7D21FB1D281711AC00B7C7A0 /* MSection.swift in Sources */,
+				7DCF2F6B2818804E00ED4869 /* Desert.swift in Sources */,
 				68A20F2A2816D89B003AA709 /* PizzaShop.xcdatamodeld in Sources */,
 				68C57CC42816ED9800FC10EA /* MainViewController.swift in Sources */,
 				68C57CC82816F09300FC10EA /* MainViewModel.swift in Sources */,
+				7DCF2F6628187DEF00ED4869 /* ProductProtocol.swift in Sources */,
 				68C57CCA2816F10F00FC10EA /* MainCell.swift in Sources */,
+				7DCF2F692818803E00ED4869 /* Pizza.swift in Sources */,
 				68C57CCD2816F18500FC10EA /* MainCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,7 +373,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PK5GMP355X;
+				DEVELOPMENT_TEAM = WJM24K3YHR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PizzaShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -337,7 +385,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.Kelevra.PizzaShop;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.Rubis-Vladimir.PizzaShop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -352,7 +400,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PK5GMP355X;
+				DEVELOPMENT_TEAM = WJM24K3YHR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PizzaShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -364,7 +412,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.Kelevra.PizzaShop;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.Rubis-Vladimir.PizzaShop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
