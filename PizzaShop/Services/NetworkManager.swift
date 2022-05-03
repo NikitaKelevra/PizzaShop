@@ -26,15 +26,15 @@ final class NetworkManager {
         
         let request = NSMutableURLRequest(url: url,
                                           cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: 15.0)
+                                          timeoutInterval: 25.0)
         
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
         
         URLSession.shared.dataTask(with: request as URLRequest) { data, responce, error in
-            if let responce = responce {
-                print(responce)
-            }
+//            if let responce = responce {
+//                print(responce)
+//            }
             
             guard let data = data else { return }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Product: Decodable {
+struct Product: Decodable, Hashable {
     var name: String
     var description: String
     var ingredients: [String]
