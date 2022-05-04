@@ -7,8 +7,9 @@
 
 import Foundation
 
-enum TypeOfProducts: CaseIterable {
-    case specialOffers, mainMenu
+enum TypeOfProducts: String, CaseIterable {
+    case specialOffers = "Особые предложения"
+    case mainMenu = "Главное меню"
 }
 
 struct ProductsList: Hashable {

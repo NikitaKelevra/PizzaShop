@@ -48,36 +48,6 @@ class MainViewController: UICollectionViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - UICollectionViewDataSource
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        viewModel.sections.count
-//    }
-//
-//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        viewModel.sections[section].items.count
-//    }
-//
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//        let type = viewModel.sections[indexPath.section].type
-//        switch type {
-//        case .mainMenu:
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MainMenuCell.self), for: indexPath) as! MainMenuCell
-//
-//            cellBuilder.configureCell(for: cell,
-//                                      with: viewModel.mainMenuCellViewModel(with: indexPath))
-//
-//            return cell
-//        case .specialOffers:
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: SpecialOfferCell.self), for: indexPath) as! SpecialOfferCell
-//
-//            cellBuilder.configureCell(for: cell,
-//                                      with: viewModel.specialOfferCellViewModel(with: indexPath))
-//
-//            return cell
-//        }
-//    }
-    
     func createDataSourse() {
         dataSourse = DataSourse(collectionView: collectionView,
                                 cellProvider: { [self] (collectionView, indexPath, _) -> UICollectionViewCell? in
@@ -85,20 +55,27 @@ class MainViewController: UICollectionViewController {
             switch viewModel.sections[indexPath.section].type {
             case .mainMenu:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MainMenuCell.self), for: indexPath) as! MainMenuCell
-
+                
                 cellBuilder.configureCell(for: cell,
-                                               with: viewModel.mainMenuCellViewModel(with: indexPath))
-
+                                          with: viewModel.mainMenuCellViewModel(with: indexPath))
+                
                 return cell
             case .specialOffers:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: SpecialOfferCell.self), for: indexPath) as! SpecialOfferCell
-
+                
                 cellBuilder.configureCell(for: cell,
-                                               with: viewModel.specialOfferCellViewModel(with: indexPath))
-
+                                          with: viewModel.specialOfferCellViewModel(with: indexPath))
+                
                 return cell
             }
         })
+        
+        dataSourse?.supplementaryViewProvider = {
+            collectionView, kind, indexPath in
+            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: String(describing: SectionHeader.self), for: indexPath) as? SectionHeader else { return nil }
+            sectionHeader.viewModel = self.viewModel.sectionHeaderViewModel(with: indexPath)
+            return sectionHeader
+        }
     }
     
     func reloadData() {
@@ -118,50 +95,79 @@ class MainViewController: UICollectionViewController {
             let section = self.viewModel.sections[sectionIndex]
             
             switch section.type {
-                
             case .mainMenu:
-                return self.createMainMenuSection()
+                return self.createMainMenuSection(type: .mainMenu)
             case .specialOffers:
                 return self.createSpecialOfferSection()
             }
         }
-        
         return layout
     }
     
-    func createMainMenuSection() -> NSCollectionLayoutSection {
+    func createMainMenuSection(type: TypeOfProducts) -> NSCollectionLayoutSection {
         let padding: CGFloat = 16
+        let paddingItem: [CGFloat] = type == .mainMenu ? [0, 16, 16, 16] : [0, 16, 0, 0]
+        var paddingSection: [CGFloat] = [66, 0, 0, 0]
         
-        let itemSize = NSCollectionLayoutSize( widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                              heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: padding, bottom: padding, trailing: padding)
+        item.contentInsets = NSDirectionalEdgeInsets.init(top: paddingItem[0],
+                                                          leading: paddingItem[1],
+                                                          bottom: paddingItem[2],
+                                                          trailing: paddingItem[3])
+        
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                heightDimension: .estimated(150))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
+                                                     subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets.init(top: 66, leading: 0, bottom: 0, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets.init(top: 66,
+                                                             leading: 0,
+                                                             bottom: 0,
+                                                             trailing: 0)
+        
+        let header = createSectionHeader()
+        section.boundarySupplementaryItems = [header]
         
         return section
     }
+        
+        func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+            let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                    heightDimension: .estimated(100))
+            let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize,
+                                                                                  elementKind: UICollectionView.elementKindSectionHeader,
+                                                                                  alignment: .top)
+            return layoutSectionHeader
+        }
     
     func createSpecialOfferSection() -> NSCollectionLayoutSection {
         let padding: CGFloat = 16
         
         let widthDimension: CGFloat = (view.bounds.width - padding) / 3
         
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                              heightDimension: .fractionalHeight(1))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                              heightDimension: .fractionalHeight(1.0))
         let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-        layoutItem.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: padding, bottom: 0, trailing: 0)
+        layoutItem.contentInsets = NSDirectionalEdgeInsets.init(top: 0,
+                                                                leading: padding,
+                                                                bottom: 0,
+                                                                trailing: 0)
         
-        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .estimated(widthDimension), heightDimension: .estimated(widthDimension * 1.25))
-        let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
+        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .estimated(widthDimension),
+                                                     heightDimension: .estimated(widthDimension * 1.25))
+        let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize,
+                                                             subitems: [layoutItem])
         
         let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
         layoutSection.orthogonalScrollingBehavior = .continuous
-        layoutSection.contentInsets = NSDirectionalEdgeInsets.init(top: 66, leading: 0, bottom: 0, trailing: 0)
+        layoutSection.contentInsets = NSDirectionalEdgeInsets.init(top: 66,
+                                                                   leading: 0,
+                                                                   bottom: 0,
+                                                                   trailing: 0)
         
         return layoutSection
     }
@@ -206,6 +212,7 @@ class MainViewController: UICollectionViewController {
         
         collectionView.register(UINib(nibName: String(describing: MainMenuCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: MainMenuCell.self))
         collectionView.register(UINib(nibName: String(describing: SpecialOfferCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: SpecialOfferCell.self))
+        collectionView.register(UINib(nibName: String(describing: SectionHeader.self), bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: String(describing: SectionHeader.self))
     }
     
     /// Настройка `Navigation Bar`

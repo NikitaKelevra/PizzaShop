@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MenuSectionCell" customModule="PizzaShop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="148" height="55"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="148" height="55"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9M-dV-oT7">
+                        <rect key="frame" x="0.0" y="0.0" width="148" height="55"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title=""/>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="K9M-dV-oT7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2Qm-MB-6Ry"/>
+                <constraint firstItem="K9M-dV-oT7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CjI-WU-fDH"/>
+                <constraint firstAttribute="trailing" secondItem="K9M-dV-oT7" secondAttribute="trailing" id="dLR-60-W9h"/>
+                <constraint firstAttribute="bottom" secondItem="K9M-dV-oT7" secondAttribute="bottom" id="eYI-Iw-veZ"/>
+            </constraints>
+            <size key="customSize" width="148" height="55"/>
+            <connections>
+                <outlet property="menuSectionButton" destination="K9M-dV-oT7" id="MVe-bc-AoQ"/>
+            </connections>
+            <point key="canvasLocation" x="202.89855072463769" y="78.013392857142847"/>
+        </collectionViewCell>
+    </objects>
+</document>

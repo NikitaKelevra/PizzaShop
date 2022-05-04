@@ -15,6 +15,8 @@ protocol MainViewModelProtocol {
     func mainMenuCellViewModel(with indexPath: IndexPath) -> MainMenuCellViewModelProtocol
     func specialOfferCellViewModel(with indexPath: IndexPath) -> SpecialOfferCellViewModelProtocol
     func sizeForItemAt(for view: UIView, with indexPath: IndexPath) -> CGSize
+    
+    func sectionHeaderViewModel(with indexPath: IndexPath) -> SectionHeaderViewModelProtocol
     //    func detailsViewModel(with indexPath: IndexPath) -> BurgerDetailsViewModelProtocol
 }
 
@@ -82,5 +84,10 @@ func sizeForItemAt(for view: UIView, with indexPath: IndexPath) -> CGSize {
     return CGSize(width: widthPerItem, height: 150)
 }
 
+    func sectionHeaderViewModel(with indexPath: IndexPath) -> SectionHeaderViewModelProtocol {
+        let Array = TypeOfProducts.allCases
+        let section = Array[indexPath.section]
+        return SectionHeaderViewModel.init(section: section)
+    }
 
 }
