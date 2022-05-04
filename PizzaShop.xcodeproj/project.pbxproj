@@ -14,8 +14,22 @@
 		68A20F2F2816D89C003AA709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68A20F2D2816D89C003AA709 /* LaunchScreen.storyboard */; };
 		68C57CC42816ED9800FC10EA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C57CC32816ED9800FC10EA /* MainViewController.swift */; };
 		68C57CC82816F09300FC10EA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C57CC72816F09300FC10EA /* MainViewModel.swift */; };
-		68C57CCA2816F10F00FC10EA /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C57CC92816F10F00FC10EA /* MainCell.swift */; };
-		68C57CCD2816F18500FC10EA /* MainCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C57CCC2816F18500FC10EA /* MainCellViewModel.swift */; };
+		7D21FB1D281711AC00B7C7A0 /* ProductsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21FB1C281711AC00B7C7A0 /* ProductsList.swift */; };
+		7D21FB1F2817122000B7C7A0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D21FB1E2817122000B7C7A0 /* Product.swift */; };
+		7D3DCE58281C20C7002C3003 /* SpecialOffersCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DCE57281C20C7002C3003 /* SpecialOffersCellViewModel.swift */; };
+		7D3DCE5E281C2191002C3003 /* MainMenuCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DCE5D281C2191002C3003 /* MainMenuCellViewModel.swift */; };
+		7D3DCE61281C2891002C3003 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DCE5F281C2891002C3003 /* MainMenuCell.swift */; };
+		7D3DCE62281C2891002C3003 /* MainMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D3DCE60281C2891002C3003 /* MainMenuCell.xib */; };
+		7D3DCE65281C29F0002C3003 /* SpecialOfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DCE63281C29F0002C3003 /* SpecialOfferCell.swift */; };
+		7D3DCE66281C29F0002C3003 /* SpecialOfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D3DCE64281C29F0002C3003 /* SpecialOfferCell.xib */; };
+		7DAEB47B28215C4C000781FF /* CellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAEB47A28215C4C000781FF /* CellBuilder.swift */; };
+		7DAEB47E2822507E000781FF /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAEB47C2822507E000781FF /* SectionHeader.swift */; };
+		7DAEB47F2822507E000781FF /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DAEB47D2822507E000781FF /* SectionHeader.xib */; };
+		7DAEB481282250B4000781FF /* SectionHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAEB480282250B4000781FF /* SectionHeaderViewModel.swift */; };
+		7DAEB48628225408000781FF /* MenuSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAEB48428225408000781FF /* MenuSectionCell.swift */; };
+		7DAEB48728225408000781FF /* MenuSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DAEB48528225408000781FF /* MenuSectionCell.xib */; };
+		7DAEB48928225427000781FF /* MenuSectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAEB48828225427000781FF /* MenuSectionCellViewModel.swift */; };
+		7DCF2F6D2818818200ED4869 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF2F6C2818818200ED4869 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +42,22 @@
 		68A20F302816D89C003AA709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68C57CC32816ED9800FC10EA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		68C57CC72816F09300FC10EA /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		68C57CC92816F10F00FC10EA /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainCell.swift; path = ../MainCell/MainCell.swift; sourceTree = "<group>"; };
-		68C57CCC2816F18500FC10EA /* MainCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainCellViewModel.swift; path = PizzaShop/ViewControllers/MainVC/MainCell/MainCellViewModel.swift; sourceTree = SOURCE_ROOT; };
+		7D21FB1C281711AC00B7C7A0 /* ProductsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsList.swift; sourceTree = "<group>"; };
+		7D21FB1E2817122000B7C7A0 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		7D3DCE57281C20C7002C3003 /* SpecialOffersCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialOffersCellViewModel.swift; sourceTree = "<group>"; };
+		7D3DCE5D281C2191002C3003 /* MainMenuCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCellViewModel.swift; sourceTree = "<group>"; };
+		7D3DCE5F281C2891002C3003 /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
+		7D3DCE60281C2891002C3003 /* MainMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuCell.xib; sourceTree = "<group>"; };
+		7D3DCE63281C29F0002C3003 /* SpecialOfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialOfferCell.swift; sourceTree = "<group>"; };
+		7D3DCE64281C29F0002C3003 /* SpecialOfferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialOfferCell.xib; sourceTree = "<group>"; };
+		7DAEB47A28215C4C000781FF /* CellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellBuilder.swift; sourceTree = "<group>"; };
+		7DAEB47C2822507E000781FF /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		7DAEB47D2822507E000781FF /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
+		7DAEB480282250B4000781FF /* SectionHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderViewModel.swift; sourceTree = "<group>"; };
+		7DAEB48428225408000781FF /* MenuSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSectionCell.swift; sourceTree = "<group>"; };
+		7DAEB48528225408000781FF /* MenuSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuSectionCell.xib; sourceTree = "<group>"; };
+		7DAEB48828225427000781FF /* MenuSectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSectionCellViewModel.swift; sourceTree = "<group>"; };
+		7DCF2F6C2818818200ED4869 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				68C57CC52816EF3900FC10EA /* ViewControllers */,
+				7D558D0928170FDC00DD7D88 /* Models */,
+				7DCF2F6428187DBB00ED4869 /* Services */,
 				68A20F2B2816D89C003AA709 /* Assets.xcassets */,
 				68A20F282816D89B003AA709 /* PizzaShop.xcdatamodeld */,
 				68A20F302816D89C003AA709 /* Info.plist */,
@@ -86,18 +116,62 @@
 			children = (
 				68C57CC32816ED9800FC10EA /* MainViewController.swift */,
 				68C57CC72816F09300FC10EA /* MainViewModel.swift */,
-				68C57CCB2816F12000FC10EA /* New Group */,
+				7DAEB482282250BC000781FF /* Headers */,
+				68C57CCB2816F12000FC10EA /* Cells */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
 		};
-		68C57CCB2816F12000FC10EA /* New Group */ = {
+		68C57CCB2816F12000FC10EA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				68C57CC92816F10F00FC10EA /* MainCell.swift */,
-				68C57CCC2816F18500FC10EA /* MainCellViewModel.swift */,
+				7D3DCE5F281C2891002C3003 /* MainMenuCell.swift */,
+				7D3DCE60281C2891002C3003 /* MainMenuCell.xib */,
+				7D3DCE5D281C2191002C3003 /* MainMenuCellViewModel.swift */,
+				7D3DCE63281C29F0002C3003 /* SpecialOfferCell.swift */,
+				7D3DCE64281C29F0002C3003 /* SpecialOfferCell.xib */,
+				7D3DCE57281C20C7002C3003 /* SpecialOffersCellViewModel.swift */,
 			);
-			path = "New Group";
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7D558D0928170FDC00DD7D88 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7D21FB1C281711AC00B7C7A0 /* ProductsList.swift */,
+				7D21FB1E2817122000B7C7A0 /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7DAEB482282250BC000781FF /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				7DAEB47C2822507E000781FF /* SectionHeader.swift */,
+				7DAEB47D2822507E000781FF /* SectionHeader.xib */,
+				7DAEB480282250B4000781FF /* SectionHeaderViewModel.swift */,
+				7DAEB483282253CF000781FF /* MenuSectionCell */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		7DAEB483282253CF000781FF /* MenuSectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				7DAEB48428225408000781FF /* MenuSectionCell.swift */,
+				7DAEB48528225408000781FF /* MenuSectionCell.xib */,
+				7DAEB48828225427000781FF /* MenuSectionCellViewModel.swift */,
+			);
+			path = MenuSectionCell;
+			sourceTree = "<group>";
+		};
+		7DCF2F6428187DBB00ED4869 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7DCF2F6C2818818200ED4869 /* NetworkManager.swift */,
+				7DAEB47A28215C4C000781FF /* CellBuilder.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +232,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D3DCE62281C2891002C3003 /* MainMenuCell.xib in Resources */,
+				7DAEB48728225408000781FF /* MenuSectionCell.xib in Resources */,
+				7D3DCE66281C29F0002C3003 /* SpecialOfferCell.xib in Resources */,
+				7DAEB47F2822507E000781FF /* SectionHeader.xib in Resources */,
 				68A20F2F2816D89C003AA709 /* LaunchScreen.storyboard in Resources */,
 				68A20F2C2816D89C003AA709 /* Assets.xcassets in Resources */,
 				68A20F272816D89B003AA709 /* Main.storyboard in Resources */,
@@ -171,12 +249,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DAEB47B28215C4C000781FF /* CellBuilder.swift in Sources */,
+				7D3DCE5E281C2191002C3003 /* MainMenuCellViewModel.swift in Sources */,
+				7DAEB481282250B4000781FF /* SectionHeaderViewModel.swift in Sources */,
+				7DCF2F6D2818818200ED4869 /* NetworkManager.swift in Sources */,
 				68A20F202816D89B003AA709 /* AppDelegate.swift in Sources */,
+				7D3DCE58281C20C7002C3003 /* SpecialOffersCellViewModel.swift in Sources */,
+				7D21FB1F2817122000B7C7A0 /* Product.swift in Sources */,
+				7D21FB1D281711AC00B7C7A0 /* ProductsList.swift in Sources */,
+				7DAEB48928225427000781FF /* MenuSectionCellViewModel.swift in Sources */,
+				7D3DCE65281C29F0002C3003 /* SpecialOfferCell.swift in Sources */,
 				68A20F2A2816D89B003AA709 /* PizzaShop.xcdatamodeld in Sources */,
+				7DAEB48628225408000781FF /* MenuSectionCell.swift in Sources */,
 				68C57CC42816ED9800FC10EA /* MainViewController.swift in Sources */,
+				7DAEB47E2822507E000781FF /* SectionHeader.swift in Sources */,
 				68C57CC82816F09300FC10EA /* MainViewModel.swift in Sources */,
-				68C57CCA2816F10F00FC10EA /* MainCell.swift in Sources */,
-				68C57CCD2816F18500FC10EA /* MainCellViewModel.swift in Sources */,
+				7D3DCE61281C2891002C3003 /* MainMenuCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +413,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PK5GMP355X;
+				DEVELOPMENT_TEAM = WJM24K3YHR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PizzaShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -337,7 +425,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.Kelevra.PizzaShop;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.Rubis-Vladimir.PizzaShop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -352,7 +440,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PK5GMP355X;
+				DEVELOPMENT_TEAM = WJM24K3YHR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PizzaShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -364,7 +452,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.Kelevra.PizzaShop;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.Rubis-Vladimir.PizzaShop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
