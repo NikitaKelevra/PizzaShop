@@ -7,16 +7,17 @@
 
 import Foundation
 
+// MARK: Менеджер сетевых запросов
 final class NetworkManager {
     
     static let shared = NetworkManager()
     
     private init() {}
     
+    /// Через замыкание захватывает список продуктов, полученных в ответ на HTTP запрос
     func fetchProducts(completion: @escaping (_ products: [Product]) -> Void) {
         
         let urlAdress = "https://burgers1.p.rapidapi.com/burgers"
-        
         guard let url = URL(string: urlAdress) else { return }
         
         let headers = [
@@ -32,13 +33,11 @@ final class NetworkManager {
         request.allHTTPHeaderFields = headers
         
         URLSession.shared.dataTask(with: request as URLRequest) { data, responce, error in
-//            if let responce = responce {
-//                print(responce)
-//            }
+            if let responce = responce {
+                print(responce)
+            }
             
             guard let data = data else { return }
-
-            
             do {
                 let data = try JSONDecoder().decode([Product].self, from: data)
                 

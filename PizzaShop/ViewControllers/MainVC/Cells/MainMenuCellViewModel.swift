@@ -8,12 +8,19 @@
 import Foundation
 import UIKit
 
+/// Протокол VM для `MenuSectionCell`
+///   - Parameters:
+///     - productName: название товара
+///     - productDescription: описание товара
 protocol MainMenuCellViewModelProtocol {
     var productName: String { get }
     var productDescription: String { get }
+    
+    /// Инициализатор (товар)
     init(_ product: Product)
 }
 
+/// VM для `MainMenuCell`
 final class MainMenuCellViewModel: MainMenuCellViewModelProtocol {
     var productName: String {
         product.name

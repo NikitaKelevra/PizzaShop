@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: Класс, описывающий ячейку для секции Основное меню
 final class SpecialOfferCell: UICollectionViewCell {
 
     @IBOutlet weak var specialOfferImageView: UIImageView!
@@ -14,7 +15,6 @@ final class SpecialOfferCell: UICollectionViewCell {
     var viewModel: SpecialOfferCellViewModelProtocol! {
         didSet {
             specialOfferImageView.image = UIImage(named: viewModel.specialOfferName)
-            print(viewModel.specialOfferName)
         }
     }
 }

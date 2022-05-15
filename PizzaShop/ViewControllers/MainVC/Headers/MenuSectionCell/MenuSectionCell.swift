@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: Класс, описывающий ячейки CollectionView в заголовке секции Основное меню
 class MenuSectionCell: UICollectionViewCell {
 
     @IBOutlet weak var menuSectionButton: UIButton!
@@ -14,7 +15,7 @@ class MenuSectionCell: UICollectionViewCell {
     var viewModel: MenuSectionCellViewModelProtocol! {
         didSet {
             menuSectionButton.setTitle(viewModel.title, for: .normal)
-            print("\(viewModel.title) +++")
+            menuSectionButton.tag = viewModel.tag
         }
     }
     
@@ -23,4 +24,7 @@ class MenuSectionCell: UICollectionViewCell {
         backgroundColor = .green
     }
 
+    @IBAction func menuSectionButtonPressed(_ sender: UIButton) {
+        viewModel.menuSectionButtonTouch(sender.tag)
+    }
 }

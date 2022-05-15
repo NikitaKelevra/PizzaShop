@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: Класс, описывающий ячейку для секции Основное меню
 final class MainMenuCell: UICollectionViewCell {
 
     @IBOutlet weak var productImageView: UIImageView!

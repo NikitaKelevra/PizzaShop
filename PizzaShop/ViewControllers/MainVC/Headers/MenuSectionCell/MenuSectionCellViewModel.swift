@@ -7,24 +7,33 @@
 
 import Foundation
 
+/// Протокол VM 
+///   - Parameters:
+///     - title: название категории товаров
+///     - tag: для изменения списка товаров в CollectionView по выбранной категории
 protocol MenuSectionCellViewModelProtocol {
     var title: String { get }
-    init(_ section: TypeOfProducts)
+    var tag: Int { get }
+    
+    /// Инициализатор (Тип товаров)
+    init(_ type: TypeOfProducts)
+    
+    /// ** При нажатии на кнопку tag этой кнопки должен будет передаться в основную VM, а затем перезагрузить CollectionView для отображения списка товаров другой категории **
+    func menuSectionButtonTouch(_ tag: Int)
 }
 
+/// VM для `MenuSectionCell`
 final class MenuSectionCellViewModel: MenuSectionCellViewModelProtocol {
-    private let titles: [String] = ["Бургеры", "Пиццы", "Напитки", "Десерты", "Комбо"]
     
-    var title: String {
-        print(section.rawValue)
-       return section.rawValue
+    var title: String
+    
+    var tag: Int = 0
+    
+    init(_ type: TypeOfProducts) {
+        self.title = type.rawValue
+    }
+    
+    func menuSectionButtonTouch(_ tag: Int) {
         
     }
-    
-    private let section: TypeOfProducts
-    
-    init(_ section: TypeOfProducts) {
-        self.section = section
-    }
-    
 }

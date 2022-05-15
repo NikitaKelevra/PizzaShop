@@ -22,6 +22,7 @@
 		7D3DCE62281C2891002C3003 /* MainMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D3DCE60281C2891002C3003 /* MainMenuCell.xib */; };
 		7D3DCE65281C29F0002C3003 /* SpecialOfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DCE63281C29F0002C3003 /* SpecialOfferCell.swift */; };
 		7D3DCE66281C29F0002C3003 /* SpecialOfferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D3DCE64281C29F0002C3003 /* SpecialOfferCell.xib */; };
+		7D528CAB2827F05600940169 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D528CAA2827F05600940169 /* Dynamic.swift */; };
 		7DAEB47B28215C4C000781FF /* CellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAEB47A28215C4C000781FF /* CellBuilder.swift */; };
 		7DAEB47E2822507E000781FF /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAEB47C2822507E000781FF /* SectionHeader.swift */; };
 		7DAEB47F2822507E000781FF /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DAEB47D2822507E000781FF /* SectionHeader.xib */; };
@@ -50,6 +51,7 @@
 		7D3DCE60281C2891002C3003 /* MainMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuCell.xib; sourceTree = "<group>"; };
 		7D3DCE63281C29F0002C3003 /* SpecialOfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialOfferCell.swift; sourceTree = "<group>"; };
 		7D3DCE64281C29F0002C3003 /* SpecialOfferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialOfferCell.xib; sourceTree = "<group>"; };
+		7D528CAA2827F05600940169 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		7DAEB47A28215C4C000781FF /* CellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellBuilder.swift; sourceTree = "<group>"; };
 		7DAEB47C2822507E000781FF /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		7DAEB47D2822507E000781FF /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
@@ -116,8 +118,9 @@
 			children = (
 				68C57CC32816ED9800FC10EA /* MainViewController.swift */,
 				68C57CC72816F09300FC10EA /* MainViewModel.swift */,
-				7DAEB482282250BC000781FF /* Headers */,
 				68C57CCB2816F12000FC10EA /* Cells */,
+				7DAEB482282250BC000781FF /* Headers */,
+				7D528CA92827F03C00940169 /* Bindings */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
@@ -133,6 +136,14 @@
 				7D3DCE57281C20C7002C3003 /* SpecialOffersCellViewModel.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		7D528CA92827F03C00940169 /* Bindings */ = {
+			isa = PBXGroup;
+			children = (
+				7D528CAA2827F05600940169 /* Dynamic.swift */,
+			);
+			path = Bindings;
 			sourceTree = "<group>";
 		};
 		7D558D0928170FDC00DD7D88 /* Models */ = {
@@ -259,6 +270,7 @@
 				7D21FB1D281711AC00B7C7A0 /* ProductsList.swift in Sources */,
 				7DAEB48928225427000781FF /* MenuSectionCellViewModel.swift in Sources */,
 				7D3DCE65281C29F0002C3003 /* SpecialOfferCell.swift in Sources */,
+				7D528CAB2827F05600940169 /* Dynamic.swift in Sources */,
 				68A20F2A2816D89B003AA709 /* PizzaShop.xcdatamodeld in Sources */,
 				7DAEB48628225408000781FF /* MenuSectionCell.swift in Sources */,
 				68C57CC42816ED9800FC10EA /* MainViewController.swift in Sources */,

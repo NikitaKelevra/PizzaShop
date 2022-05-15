@@ -20,6 +20,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="148" height="55"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title=""/>
+                        <connections>
+                            <action selector="menuSectionButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="8SF-Ls-IJI"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
