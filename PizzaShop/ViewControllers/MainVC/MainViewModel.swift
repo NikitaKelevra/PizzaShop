@@ -5,89 +5,87 @@
 //  Created by Сперанский Никита on 25.04.2022.
 //
 
-import UIKit
+import Foundation
 
+/// Протокол VM
+///   - Parameters:
+///     - products: продукция (Массив данных, получаемый из REST API
+///     свойство временное, пока бд в стадии разработки)
+///     - productsList: лист продукции
+///     - tag: Передается при нажатии на кнопку в CollectionView заголовка.
+///     Необходим для отображения выбранной категории товаров
 protocol MainViewModelProtocol {
     var products: [Product] { get set }
-    var sections: [ProductsList] { get }
+    var productsList: [ProductsList] { get }
+    var tag: Int { get }
+    
+    /// Получение данных продукции из REST API
     func fetchProducts(completion: @escaping() -> Void)
-    func numberOfItems() -> Int
+    
+    /// Создание VM ячеек и заголовков
     func mainMenuCellViewModel(with indexPath: IndexPath) -> MainMenuCellViewModelProtocol
     func specialOfferCellViewModel(with indexPath: IndexPath) -> SpecialOfferCellViewModelProtocol
-    func sizeForItemAt(for view: UIView, with indexPath: IndexPath) -> CGSize
-    
-    func sectionHeaderViewModel(with indexPath: IndexPath) -> SectionHeaderViewModelProtocol
-    //    func detailsViewModel(with indexPath: IndexPath) -> BurgerDetailsViewModelProtocol
+    func sectionHeaderViewModel() -> SectionHeaderViewModelProtocol
 }
 
+/// VM для `MainViewController`
 final class MainViewModel: MainViewModelProtocol {
-    var sections: [ProductsList] = []
+    var productsList: [ProductsList] = []
     var products: [Product] = [] {
         didSet {
-            var list: [ProductsList] = []
-            let typesOfSections = TypeOfProducts.allCases
-            typesOfSections.forEach { type in
-                var items: [Product] = []
-                if type == .specialOffers {
-                    for index in 0..<products.count {
-                        if index <= 6 {
-                            items.append(products[index])
-                        }
-                    }
-                } else {
-                    for index in 0..<products.count {
-                        if index >= 7 {
-                            items.append(products[index])
-                        }
+            getSectionsList()
+        }
+    }
+    var tag: Int = 0
+    
+    func fetchProducts(completion: @escaping () -> Void) {
+        NetworkManager.shared.fetchProducts { products in
+            self.products = products
+            completion()
+        }
+    }
+    
+    func mainMenuCellViewModel(with indexPath: IndexPath) -> MainMenuCellViewModelProtocol {
+        let product = products[indexPath.row]
+        return MainMenuCellViewModel.init(product)
+    }
+    
+    func specialOfferCellViewModel(with indexPath: IndexPath) -> SpecialOfferCellViewModelProtocol {
+        let product = products[indexPath.row]
+        return SpecialOfferCellViewModel.init(product)
+    }
+    
+    func sectionHeaderViewModel() -> SectionHeaderViewModelProtocol {
+        
+        return SectionHeaderViewModel.init()
+    }
+    
+    /// Временная функция для получения `productsList`
+    /// В задумке такой лист получать сразу из REST API
+    private func getSectionsList() {
+        var list: [ProductsList] = []
+        let typesOfSections = TypeOfSection.allCases
+        
+        typesOfSections.forEach { type in
+            var items: [Product] = []
+            if type == .specialOffers {
+                for index in 0..<products.count {
+                    if index <= 6 {
+                        items.append(products[index])
                     }
                 }
-                
-            let section = ProductsList(type: type, items: items)
+            } else {
+                for index in 0..<products.count {
+                    if index >= 7 {
+                        items.append(products[index])
+                    }
+                }
+            }
+            
+            let section = ProductsList(type: .burger, section: type, items: items)
             list.append(section)
         }
-        self.sections = list
+        self.productsList = list
+        
     }
-}
-
-func fetchProducts(completion: @escaping () -> Void) {
-    NetworkManager.shared.fetchProducts { products in
-        self.products = products
-        completion()
-    }
-}
-
-func numberOfItems() -> Int {
-    products.count
-}
-
-func mainMenuCellViewModel(with indexPath: IndexPath) -> MainMenuCellViewModelProtocol {
-    
-    let product = products[indexPath.row]
-    return MainMenuCellViewModel.init(product)
-}
-
-func specialOfferCellViewModel(with indexPath: IndexPath) -> SpecialOfferCellViewModelProtocol {
-    
-    let product = products[indexPath.row]
-    return SpecialOfferCellViewModel.init(product)
-}
-
-func sizeForItemAt(for view: UIView, with indexPath: IndexPath) -> CGSize {
-    
-    let padding: CGFloat = 10
-    let itemPerRow: CGFloat = 1
-    
-    let paddingWidth = padding * (itemPerRow + 1)
-    let availableWidth = view.frame.width - paddingWidth
-    let widthPerItem = availableWidth / itemPerRow
-    
-    return CGSize(width: widthPerItem, height: 150)
-}
-
-    func sectionHeaderViewModel(with indexPath: IndexPath) -> SectionHeaderViewModelProtocol {
-        let Array = TypeOfProducts.allCases
-        let section = Array[indexPath.section]
-        return SectionHeaderViewModel.init(section: section)
-    }
-
 }

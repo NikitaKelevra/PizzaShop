@@ -7,20 +7,19 @@
 
 import Foundation
 
+/// Протокол VM 
 protocol SectionHeaderViewModelProtocol {
-    init(section: TypeOfProducts)
-    func menuSectionCellViewModel() -> MenuSectionCellViewModelProtocol
+    /// Создание VM ячеек
+    func menuSectionCellViewModel(with indexPath: IndexPath) -> MenuSectionCellViewModelProtocol
 }
 
+/// VM для `SectionHeader`
 final class SectionHeaderViewModel: SectionHeaderViewModelProtocol {
     
-    private let section: TypeOfProducts
+    private let sectionType: [TypeOfProducts] = TypeOfProducts.allCases
     
-    init(section: TypeOfProducts) {
-        self.section = section
-    }
-    
-    func menuSectionCellViewModel() -> MenuSectionCellViewModelProtocol {
-        return MenuSectionCellViewModel.init(section)
+    func menuSectionCellViewModel(with indexPath: IndexPath) -> MenuSectionCellViewModelProtocol {
+        let type = sectionType[indexPath.row]
+        return MenuSectionCellViewModel.init(type)
     }
 }

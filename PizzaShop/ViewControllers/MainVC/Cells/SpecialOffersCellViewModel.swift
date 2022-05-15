@@ -7,14 +7,19 @@
 
 import Foundation
 
+/// Протокол VM
+///   - Parameters:
+///     - specialOfferName: название спец-предложения
 protocol SpecialOfferCellViewModelProtocol {
     var specialOfferName: String { get }
+    /// Инициализатор (товар)
     init(_ product: Product)
 }
 
+/// VM для `SpecialOfferCell`
 final class SpecialOfferCellViewModel: SpecialOfferCellViewModelProtocol {
     var specialOfferName: String {
-        product.name
+        product.name /// Временно так
     }
     
     private let product: Product
